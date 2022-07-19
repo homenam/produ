@@ -1,0 +1,52 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+#singemain{
+	border-radius: 5px;
+	margin: auto;
+	width: 360px;
+}
+
+.singemain{
+	width: 100%;
+	height: 250px;
+	background-color: red;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+}
+
+.singemain img{
+	width: 100px;
+	height: 100px;
+	border-radius: 15px;
+	margin: 20px;
+}
+.singemain h1{
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px;
+
+}
+
+.singemain p{
+	margin: 10px;
+}
+
+#asidesinge{
+	width: 100%;
+}
+#div_aside{
+	width: 160px;
+	margin: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+
+}
+

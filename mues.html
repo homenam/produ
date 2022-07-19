@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+	<title>muse</title>
+	<style type="text/css">
+		
+		#play{
+			width: 160px;
+			height: 40px;
+			border-style: none;
+			background-color: orange;
+			border-radius: 5px;
+		}
+
+
+		#puase{
+			width: 160px;
+			height: 40px;
+			border-style: none;
+			background-color: blue;
+			border-radius: 5px;
+		}
+
+		#load{
+			width: 160px;
+			height: 40px;
+			border-style: none;
+			background-color:red;
+			border-radius: 5px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<button id="play">play</button>
+	<button id="puase">puase</button>
+	<button id="load"  onclick="load_fun();">load</button>
+	<button id="input" >playbackRate</button>
+
+
+	<audio id="audio" src="1.mp3">
+		
+	</audio>
+
+<script type="text/javascript">
+	
+let but_play=document.getElementById('play');
+let input_play=document.getElementById('input');
+let but_pause=document.getElementById('puase');
+let audio_play=document.getElementById('audio');
+but_play.addEventListener("click",()=>{
+audio_play.play();
+
+})
+
+
+but_pause.addEventListener("click",()=>{
+
+	audio_play.pause();
+})
+
+
+function load_fun() {
+	audio_play.load();
+}
+
+input_play.addEventListener("click",()=>{
+
+	audio_play.playbackRate +=0.10 ;
+
+	console.log(input_play.value)
+})
+</script>
+</body>
+</html>

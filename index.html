@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+	<title>singe</title>
+	<link rel="stylesheet" type="text/css" href="singe.css">
+	<style type="text/css">
+		img{
+			margin: 10px;
+
+		}
+		#div_input{
+			width: 100%;
+			height: auto;
+			margin-top: 10px; 
+			margin-bottom: 10px; text-align: center;
+
+		}
+		#div_input input{
+			width: 100%;
+			height: 2px;
+
+
+		}
+		#div_input label{
+			text-align: center;
+			width: 100%;
+			font-size: 16px;
+
+		}
+
+		input[type="range"]{
+			color: red;
+			background-color: orange;
+			height: 5px;
+			border-radius: 5px;
+			-webkit-appearance:none;
+		}
+		input[type="range"]::-webkit-slider-thumb{
+			-webkit-appearance:none;
+			background-color: white;
+			border-style: solid;
+			border-color: blue;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+
+		}
+
+		#foot{
+			width: 100%;
+			height: auto;
+			margin-top: 50px;
+			align-items: center;
+			text-align: center;
+		}
+
+
+		button{width: 22px;height: 22px;border-radius: 10px;border-style: none;
+
+		}
+
+		#color1{
+			background-color: red;
+		}
+
+		#color2{
+			background-color: orange;
+		}
+
+		#color3{
+			background-color: blue;
+		}
+
+		#color4{
+			background-color: yellowgreen;
+		}
+
+
+		
+	</style>
+</head>
+<body>
+
+		 
+	<main id="singemain">
+		<header class="singemain">
+			<img src="R.jpg" alt="">
+			<h1>The national anthem of the occupied State of Palestine</h1>
+			<p id="audio1">singer 1</p>
+		</header>
+		<aside id="asidesinge">
+			<div id="div_aside">
+				<img id="back"  src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/20/000000/external-back-arrow-kmg-design-glyph-kmg-design.png"/>
+				<img id="play" src="https://img.icons8.com/ios-glyphs/30/000000/play--v1.png"/>
+				<img id="see" src="https://img.icons8.com/office/80/000000/equal-sign.png">
+				<img id="next" src="https://img.icons8.com/ios-glyphs/30/000000/circled-chevron-right.png"/>
+			</div>
+			<audio id="audio"> </audio>
+			<div id="div_input">
+				<label>مستوي الصوت</label>
+				<input id="input_v" type="range" name="">
+				<label> سرعه الصوت</label>
+				<input id="input_Play" type="range" max="200" min="0">
+			</div>
+
+			<footer id="foot">
+				<button id="color1"></button>
+				<button id="color2"></button>
+				<button id="color3"></button>
+				<button id="color4"></button>
+				
+			</footer>
+		</aside>
+	</main>
+	<script src="color.js"></script>
+<script type="text/javascript">
+
+	class Sing{
+
+		constructor(){
+
+			let singe_main=document.getElementById('singemain');
+			singe_main.style.height=screen.height +"px";
+			singe_main.style.background="red";
+			singe_main.style.whiter=350 +"px";
+
+
+			let aside_singe=document.getElementById('asidesinge');
+			aside_singe.style.height=screen.height +"px";
+			aside_singe.style.background="white";
+	
+
+
+		}
+	}
+
+	onload =new Sing();
+	let xxx=document.getElementById("audio");
+
+let input_vo=document.getElementById("input_v");
+let input_Play11=document.getElementById("input_Play");
+	let array_singe=["1.mp3","2.mp3","3.mp3"];
+	let title_singe=["1.mp3","2.mp3","3.mp3"];
+
+			let see_audio=document.getElementById('see');
+			see_audio.style.display="none";
+
+input_vo.addEventListener("change" , ()=>{
+
+var xl=input_vo.value  /  100;
+console.log(xl)
+ xxx.volume = xl;
+
+})
+
+
+
+
+
+input_Play11.addEventListener("change" , ()=>{
+
+var fft=input_Play11.value / 100;
+console.log(fft);
+ xxx.playbackRate  = fft;
+
+})
+
+
+
+
+
+
+
+
+	let test_title=document.getElementById("audio1");
+
+
+		let back_test=document.getElementById("back");
+	back_test.addEventListener("click",()=>{
+
+conut --;
+ play_singe();
+
+
+	})
+
+
+
+		let next_test=document.getElementById("next");
+	next_test.addEventListener("click",()=>{
+
+conut ++;
+ play_singe();
+
+
+
+	})
+
+
+
+
+
+
+	let conut = 0;
+
+
+	function play_singe() {
+
+
+
+		if (conut <= 3) {
+	    
+			xxx.src=array_singe[conut];
+
+	        xxx.play();
+
+	        test_title.innerHTML = title_singe[conut ];
+
+	        play_test.style.display="none";
+	        see_audio.style.display="block"
+
+	       console.log(conut )
+	       
+
+		}
+
+	}
+		
+
+
+
+	let play_test=document.getElementById("play");
+	play_test.addEventListener("click",()=>{
+
+		play_singe();
+
+		
+
+
+	})
+
+
+
+
+	 see_audio.addEventListener("click",()=>{
+
+		xxx.pause();
+
+ 	    play_test.style.display="block";
+	    see_audio.style.display="none";
+     })
+
+
+
+
+
+
+	
+</script>
+</body>
+</html>
